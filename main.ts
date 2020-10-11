@@ -1,11 +1,16 @@
-// Press Button A to decrease the brightness of the LEDs.
+// Press Button A to decrease the brightness of the HDHalo LEDs.
 input.onButtonPressed(Button.A, function () {
     if (brightness > 0) {
         brightness += -1
         haloDisplay.setBrightness(brightness)
     }
 })
-// Press Button B to increase the brightness of the LEDs.
+// Press Buttons A and B to display the brightness of the HDHalo LEDs.
+input.onButtonPressed(Button.AB, function () {
+    basic.showString("Brightness:")
+    basic.showNumber(brightness)
+})
+// Press Button B to increase the brightness of the HDHalo LEDs.
 input.onButtonPressed(Button.B, function () {
     if (brightness < 255) {
         brightness += 1
